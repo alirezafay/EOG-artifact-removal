@@ -1,0 +1,12 @@
+clc; close all; clear all; 
+sig = load('pure.mat');
+sig2 = load('contaminated.mat');
+pure1 = sig.pure;
+contaminated = sig2.contaminated;
+load('Electrodes') ;
+offset = max(abs(contaminated(:))) ;
+feq = 200;
+ElecName =  [] ;
+titre = 'contaminated signal'; 
+disp_eeg(contaminated,offset,feq,ElecName,titre);
+time_EOG = [1.5 2.925; 16 16.5; 21.9 22.5];
